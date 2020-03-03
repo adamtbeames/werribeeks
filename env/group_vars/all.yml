@@ -2,7 +2,7 @@
 
 ip_adress: 52.62.32.21
 
-instance_name: ansible-aws-wordpress
+instance_name: werribeeks.org.au
 instance_region: ap-southeast-2
 instance_zone: ap-southeast-2a
 instance_blueprint: ubuntu_18_04

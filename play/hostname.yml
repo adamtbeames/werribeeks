@@ -1,5 +1,5 @@
 ---
-- hosts: ansible-aws-wordpress
+- hosts: werribeeks.org.au
   vars_files:
     - ../env/vault/vault
   become: true

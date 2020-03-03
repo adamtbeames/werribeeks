@@ -58,16 +58,32 @@
     url: https://download.civicrm.org/civicrm-5.22.1-wordpress.zip
     dest: /tmp/civicrm.zip
 
-- name: Unarchive CiviCRM for Wordpress into /var/www/html/wordpress/wp-content/plugins/
-  unarchive:
-    src: /tmp/civicrm.zip
-    dest: /var/www/html/wordpress/wp-content/plugins/
-    remote_src: yes
+#- name: Download the latest version of CiviCRM Localizations
+#  get_url:
+#    url: https://download.civicrm.org/civicrm-5.22.1-l10n.tar.gz
+#    dest: /tmp/civicrmlocalizations.tar.gz
 
-- name: Delete the archive
-  file:
-    path: /tmp/civicrm.zip
-    state: absent
+#- name: Install curl
+#  apt:
+#    name: php-curl
+#    state: present
+
+#- name: Unarchive CiviCRM for Wordpress into /var/www/html/wordpress/wp-content/plugins/
+#  unarchive:
+#    src: /tmp/civicrm.zip
+#    dest: /var/www/html/wordpress/wp-content/plugins/
+#    remote_src: yes
+
+#- name: Unarchive CiviCRM Localizations /var/www/html/wordpress/wp-content/plugins/
+#  unarchive:
+#    src: /tmp/civicrmlocalizations.tar.gz
+#    dest: /var/www/html/wordpress/wp-content/plugins/
+#    remote_src: yes
+
+#- name: Delete the archive
+#  file:
+#    path: /tmp/civicrmlocalizations.tar.gz
+#    state: absent
 
 - name: Set correct owner and group on the DocumentRoot
   file:

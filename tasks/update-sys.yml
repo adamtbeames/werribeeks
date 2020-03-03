@@ -1,5 +1,5 @@
 ---
-- hosts: ansible-aws-wordpress
+- hosts: werribeeks.org.au
   become: true
 
   tasks:
@@ -7,7 +7,7 @@
   - name: Update apt repos
     apt:
       update_cache: yes
-  
+
   - name: Update packages to latest version
     apt:
       name: "*"

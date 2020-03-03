@@ -18,10 +18,8 @@
       wait_for: timeout=60
 
     - name: Attach static IP to {{ instance_name }}
-      command: aws lightsail attach-static-ip --static-ip-name werribeeks --instance-name ansible-aws-wordpress
+      command: aws lightsail attach-static-ip --static-ip-name werribeeks --instance-name werribeeks.org.au
 
     - name: Open HTTPS port to {{ instance_name }}
-      command: aws lightsail open-instance-public-ports --port-info fromPort=443,protocol=TCP,toPort=443 --instance-name ansible-aws-wordpress
+      command: aws lightsail open-instance-public-ports --port-info fromPort=443,protocol=TCP,toPort=443 --instance-name werribeeks.org.au
 # aws lightsail allocate-static-ip --static-ip-name werribeeks
-# aws lightsail attach-static-ip --static-ip-name werribeeks --instance-name ansible-aws-wordpress
-# aws lightsail open-instance-public-ports --port-info fromPort=443,protocol=TCP,toPort=443 --instance-name ansible-aws-wordpress

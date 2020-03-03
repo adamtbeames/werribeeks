@@ -1,21 +1,21 @@
 ---
-- hosts: ansible-aws-wordpress
+- hosts: werribeeks.org.au
   become: true
 
   tasks:
     - name: Install aptitude
-      apt: 
+      apt:
         name: aptitude
         state: present
 
     - name: Upgrade all packages to the latest version
-      apt: 
-        update_cache: yes 
+      apt:
+        update_cache: yes
         upgrade: full
-    
+
     - name: Ensure update-manager-core is installed
-      apt: 
-        name: update-manager-core 
+      apt:
+        name: update-manager-core
         state: present
 
     - name: Run do-release-upgrade non-interactively

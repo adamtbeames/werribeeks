@@ -1,6 +1,6 @@
 ---
 
-- hosts: ansible-aws-wordpress
+- hosts: werribeeks.org.au
   become: true
 
   tasks:
