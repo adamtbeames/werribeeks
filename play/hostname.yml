@@ -1,0 +1,10 @@
+---
+- hosts: ansible-aws-wordpress
+  vars_files:
+    - ../env/vault/vault
+  become: true
+
+  tasks:
+    - name: Set the hostname
+      hostname:
+        name: "{{ instance_name }}"

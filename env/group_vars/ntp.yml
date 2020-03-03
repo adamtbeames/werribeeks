@@ -1,0 +1,10 @@
+---
+
+ntp_enabled: true
+
+ntp_timezone: Australia/Melbourne
+
+ntp_server1: 0.au.pool.ntp.org
+ntp_server2: 1.au.pool.ntp.org
+ntp_server3: 2.au.pool.ntp.org
+ntp_server4: 3.au.pool.ntp.org

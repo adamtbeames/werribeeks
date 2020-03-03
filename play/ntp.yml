@@ -1,0 +1,8 @@
+---
+- hosts: ntp
+  vars_files:
+    - ../env/vault/vault
+  become: true
+
+  roles:
+    - geerlingguy.ntp

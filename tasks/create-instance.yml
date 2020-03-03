@@ -1,0 +1,27 @@
+---
+- hosts: localhost
+
+  tasks:
+    - name: Create AWS instance {{ instance_name }} in {{ instance_region }}
+      lightsail:
+        state: present
+        name: "{{ instance_name }}"
+        region: "{{ instance_region }}"
+        zone: "{{ instance_zone }}"
+        blueprint_id: "{{ instance_blueprint }}"
+        bundle_id: "{{ instance_bundle }}"
+        key_pair_name: "{{ key_name }}"
+        user_data: "sudo apt update && sudo apt install -y python"
+        wait_timeout: 1500
+
+    - name: Wait for the instance to be up
+      wait_for: timeout=60
+
+    - name: Attach static IP to {{ instance_name }}
+      command: aws lightsail attach-static-ip --static-ip-name werribeeks --instance-name ansible-aws-wordpress
+
+    - name: Open HTTPS port to {{ instance_name }}
+      command: aws lightsail open-instance-public-ports --port-info fromPort=443,protocol=TCP,toPort=443 --instance-name ansible-aws-wordpress
+# aws lightsail allocate-static-ip --static-ip-name werribeeks
+# aws lightsail attach-static-ip --static-ip-name werribeeks --instance-name ansible-aws-wordpress
+# aws lightsail open-instance-public-ports --port-info fromPort=443,protocol=TCP,toPort=443 --instance-name ansible-aws-wordpress

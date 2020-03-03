@@ -1,0 +1,8 @@
+---
+- hosts: mysql
+  vars_files:
+    - ../env/vault/vault
+  become: true
+
+  roles:
+    - geerlingguy.mysql

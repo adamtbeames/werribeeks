@@ -1,0 +1,14 @@
+---
+
+ip_adress: 52.62.32.21
+
+instance_name: ansible-aws-wordpress
+instance_region: ap-southeast-2
+instance_zone: ap-southeast-2a
+instance_blueprint: ubuntu_18_04
+instance_bundle: micro_2_2
+key_name: werribeekstech
+
+ansible_user: ubuntu
+
+wp_version: 5.3.2

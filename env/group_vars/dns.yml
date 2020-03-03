@@ -1,0 +1,16 @@
+---
+
+dns_name: www.werribeeks.org.au
+dns_zone: werribeeks.org.au
+dns_calendar: calendar.{{ dns_zone }}
+dns_drive: drive.{{ dns_zone }}
+dns_groups: groups.{{ dns_zone }}
+dns_mail: mail.{{ dns_zone }}
+dns_sites: sites.{{ dns_zone }}
+dns_spf: '"v=spf1 include:_spf.google.com ~all"'
+dns_gsuite: ghs.googlehosted.com.
+dns_mx1: aspmx.l.google.com.
+dns_mx2: alt1.aspmx.l.google.com.
+dns_mx3: alt2.aspmx.l.google.com.
+dns_mx4: aspmx2.googlemail.com.
+dns_mx5: aspmx3.googlemail.com.

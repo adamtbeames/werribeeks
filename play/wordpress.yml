@@ -1,0 +1,9 @@
+---
+
+- hosts: wordpress
+  vars_files:
+    - ../env/vault/vault
+  become: true
+
+  roles:
+    - wordpress
