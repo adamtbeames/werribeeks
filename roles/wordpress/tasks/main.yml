@@ -37,6 +37,38 @@
     path: /tmp/miniorange-login-openid.zip
     state: absent
 
+- name: Download the latest version of Mailchimp for Wordpress
+  get_url:
+    url: https://downloads.wordpress.org/plugin/mailchimp-for-wp.4.7.5.zip
+    dest: /tmp/mailchimp-for-wp.zip
+
+- name: Unarchive Mailchimp for Wordpress into /var/www/html/wordpress/wp-content/plugins/
+  unarchive:
+    src: /tmp/mailchimp-for-wp.zip
+    dest: /var/www/html/wordpress/wp-content/plugins/
+    remote_src: yes
+
+- name: Delete the archive
+  file:
+    path: /tmp/mailchimp-for-wp.zip
+    state: absent
+
+- name: Download the latest version of CiviCRM for Wordpress
+  get_url:
+    url: https://download.civicrm.org/civicrm-5.22.1-wordpress.zip
+    dest: /tmp/civicrm.zip
+
+- name: Unarchive CiviCRM for Wordpress into /var/www/html/wordpress/wp-content/plugins/
+  unarchive:
+    src: /tmp/civicrm.zip
+    dest: /var/www/html/wordpress/wp-content/plugins/
+    remote_src: yes
+
+- name: Delete the archive
+  file:
+    path: /tmp/civicrm.zip
+    state: absent
+
 - name: Set correct owner and group on the DocumentRoot
   file:
     path: /var/www/html/
