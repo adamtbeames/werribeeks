@@ -41,8 +41,8 @@ apache_vhosts_ssl:
 certbot_certs:
   - email: "{{ certbot_mail }}"
     domains:
-      - "{{ dns_name }}"
       - "{{ dns_zone }}"
+      - "{{ dns_name }}"
 
 certbot_create_standalone_stop_services: apache2
 
