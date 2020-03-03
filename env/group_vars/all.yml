@@ -12,3 +12,6 @@ key_name: werribeekstech
 ansible_user: ubuntu
 
 wp_version: 5.3.2
+
+dns_name: www.werribeeks.org.au
+dns_zone: werribeeks.org.au

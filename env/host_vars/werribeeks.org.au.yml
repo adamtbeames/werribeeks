@@ -44,8 +44,6 @@ certbot_certs:
       - "{{ dns_name }}"
       - "{{ dns_zone }}"
 
-certbot_create_standalone_stop_services:
-  - apache2
+certbot_create_standalone_stop_services: apache2
 
-certbot_create_if_missing:
-  - true
+certbot_create_if_missing: true
