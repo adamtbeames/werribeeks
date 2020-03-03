@@ -1,0 +1,96 @@
+---
+
+- name: Create MX records in DNS zone {{ dns_zone }}
+  route53:
+    state: present
+    zone: "{{ dns_zone }}"
+    record: "{{ dns_zone }}"
+    type: MX
+    ttl: 900
+    value:
+      - " 1 {{ dns_mx1 }} "
+      - " 5 {{ dns_mx2 }} "
+      - " 5 {{ dns_mx3 }} "
+      - " 10 {{ dns_mx4 }} "
+      - " 10 {{ dns_mx5 }} "
+    overwrite: yes
+
+- name: Create {{ dns_zone }} A record of {{ ip_address }} in DNS zone {{ dns_zone }}
+  route53:
+    state: present
+    zone: "{{ dns_zone }}"
+    record: "{{ dns_zone }}"
+    type: A
+    ttl: 900
+    value: "{{ ip_adress }}"
+    overwrite: yes
+
+- name: Create www A record of {{ ip_address }} in DNS zone {{ dns_zone }}
+  route53:
+    state: present
+    zone: "{{ dns_zone }}"
+    record: "www.{{ dns_zone }}"
+    type: A
+    ttl: 900
+    value: "{{ ip_adress }}"
+    overwrite: yes
+
+- name: Create {{ dns_calendar }} CNAME record of {{ dns_gsuite }} in DNS zone {{ dns_zone }}
+  route53:
+    state: present
+    zone: "{{ dns_zone }}"
+    record: "{{ dns_calendar }}"
+    type: CNAME
+    ttl: 900
+    value: "{{ dns_gsuite }}"
+    overwrite: yes
+
+- name: Create {{ dns_drive }} CNAME record of {{ dns_gsuite }} in DNS zone {{ dns_zone }}
+  route53:
+    state: present
+    zone: "{{ dns_zone }}"
+    record: "{{ dns_drive }}"
+    type: CNAME
+    ttl: 900
+    value: "{{ dns_gsuite }}"
+    overwrite: yes
+
+- name: Create {{ dns_groups }} CNAME record of {{ dns_gsuite }} in DNS zone {{ dns_zone }}
+  route53:
+    state: present
+    zone: "{{ dns_zone }}"
+    record: "{{ dns_groups }}"
+    type: CNAME
+    ttl: 900
+    value: "{{ dns_gsuite }}"
+    overwrite: yes
+
+- name: Create {{ dns_mail }} CNAME record of {{ dns_gsuite }} in DNS zone {{ dns_zone }}
+  route53:
+    state: present
+    zone: "{{ dns_zone }}"
+    record: "{{ dns_mail }}"
+    type: CNAME
+    ttl: 900
+    value: "{{ dns_gsuite }}"
+    overwrite: yes
+
+- name: Create {{ dns_sites }} CNAME record of {{ dns_gsuite }} in DNS zone {{ dns_zone }}
+  route53:
+    state: present
+    zone: "{{ dns_zone }}"
+    record: "{{ dns_sites }}"
+    type: CNAME
+    ttl: 900
+    value: "{{ dns_gsuite }}"
+    overwrite: yes
+
+- name: Create TXT record of {{ dns_spf }} in DNS zone {{ dns_zone }}
+  route53:
+    state: present
+    zone: "{{ dns_zone }}"
+    record: "{{ dns_zone }}"
+    type: TXT
+    ttl: 900
+    value: "{{ dns_spf }}"
+    overwrite: yes
