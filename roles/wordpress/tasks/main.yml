@@ -1,5 +1,15 @@
 ---
 
+- name: Create /var/www directory
+  file:
+    path: /var/www
+    state: directory
+
+- name: Create /var/www/html directory
+  file:
+    path: /var/www/html
+    state: directory
+
 - name: Download the latest version of Wordpress
   get_url:
     url: https://wordpress.org/wordpress-{{ wp_version }}.tar.gz
