@@ -17,6 +17,7 @@ mysql_users:
 
 apache_vhosts:
   - servername: "{{ dns_name }}"
+    serveralias: "{{ dns_zone }}"
     documentroot: "/var/www/html/wordpress"
     extra_parameters: |
       ErrorLog /var/log/apache2/{{ dns_name }}.error.log
